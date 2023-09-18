@@ -1,0 +1,29 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${command:cmake.launchTargetPath}",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/i686-w64-mingw32-gdb",
+            "debugServerArgs": "Z:/usr/share/win32/gdbserver.exe localhost:1111 ${command:cmake.launchTargetPath} ${command:cmake.launchTargetPath} arg1 arg2",
+            "miDebuggerServerAddress": "localhost:1111",
+            "serverStarted":"Listening\\ on\\ port\\ \\d*",
+            "debugServerPath": "/usr/bin/wine",
+            "filterStderr":true,
+            "filterStdout":false,
+            "logging": {
+                "moduleLoad": true,
+                "programOutput": true,
+                "exceptions": true
+            },
+            "preLaunchTask": "pkill gdbserver",
+            "postDebugTask": "pkill gdbserver"
+        }
+    ]
+}
