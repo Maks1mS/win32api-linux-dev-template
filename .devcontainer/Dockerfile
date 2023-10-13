@@ -19,3 +19,6 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         clang-format \
         ninja-build \
     && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
+
+COPY locale.gen /etc/
+RUN locale-gen
